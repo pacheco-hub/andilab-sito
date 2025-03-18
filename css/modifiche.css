@@ -276,39 +276,4 @@ html {
   outline: none !important;
 }
 
-.cookie-consent {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: #333;
-  color: white;
-  padding: 10px;
-  text-align: center;
-  font-size: 14px;
-  z-index: 9999;
-  display: none; /* Nascondi l'avviso inizialmente */
-}
 
-.cookie-consent a {
-  color: #ffcc00;
-  text-decoration: none;
-}
-
-.cookie-consent .btn-accept {
-  background-color: #ffcc00;
-  border: none;
-  padding: 8px 16px;
-  margin-left: 10px;
-  color: white;
-  cursor: pointer;
-}
-
-.cookie-consent .btn-accept:hover {
-  background-color: #e6b800;
-}
-
-
-
-  
-  

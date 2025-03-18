@@ -1,0 +1,78 @@
+.servizio {
+  text-align: center;
+  background: white;
+  padding: 50px 20px 20px; /* Spazio per compensare l'immagine */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 1500px;
+  position: relative; /* Necessario per il posizionamento assoluto dell'SVG */
+  margin-left: 20px;
+  margin-right: 20px;
+  
+ 
+  /* Rimosso il bordo CSS in quanto l'SVG lo sostituisce */
+}
+
+.servizio:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background: #2b86c7;
+}
+
+.servizio img {
+  width: 150px;
+  border-radius: 10%;
+  position: absolute;
+  top: 0; /* Posiziona l'immagine parzialmente fuori dal div */
+  left: 50%;
+  transform: translate(-50%, -70%);
+  z-index: 999;
+}
+
+.descrizioneServizi {
+  font-size: 18px;
+  color: #333;
+  margin-top: 40px;
+  transition: color 0.3s ease;
+}
+
+.servizio:hover p.descrizioneServizi {
+  color: white;
+}
+.servizio:hover h3 {
+  -webkit-text-fill-color: white; /* Cambia il testo in nero */
+  background: none; /* Rimuove il gradiente */
+  text-shadow: none; /* Rimuove l'ombra se non la vuoi */
+}
+
+.servizio:hover a#bottoneSito {
+  background: #ef781a;
+}
+
+
+.border-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Effetto di animazione del bordo */
+.servizio:hover .border-path {
+  animation: draw-border 2s forwards;
+}
+
+@keyframes draw-border {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+h3 {margin-top: 20px; position: relative; font-weight: 600; text-transform: uppercase; margin-bottom: 10px; background: linear-gradient(180deg, var(--themeht-primary-color2) 52%, var(--themeht-primary-color) 54%, var(--themeht-primary-color3) 56%); background-clip: border-box; -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);}
+
+.contenitore {
+  margin-bottom: 30px;
+}

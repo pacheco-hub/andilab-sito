@@ -114,7 +114,7 @@ img,
 /* ------------------------
     Scroll to Top
 ------------------------*/
-.scroll-top { position: fixed; right: 50px; bottom: 80px; height: 60px; width: 60px; cursor: pointer; display: block; border-radius: 50px; z-index: 10000; opacity: 0; visibility: hidden; transform: translateY(15px); -webkit-transition: all 200ms linear; transition: all 200ms linear; background: var(--themeht-bg-light-color); }
+.scroll-top { position: fixed; right: 50px; bottom: 50px; height: 60px; width: 60px; cursor: pointer; display: block; border-radius: 50px; z-index: 10000; opacity: 0; visibility: hidden; transform: translateY(15px); -webkit-transition: all 200ms linear; transition: all 200ms linear; background: var(--themeht-bg-light-color); }
 .scroll-top.active-progress { opacity: 1; visibility: visible; transform: translateY(0); }
 .scroll-top::after { position: absolute; font-family: 'bootstrap-icons'; content: '\F145'; text-align: center; line-height: 60px; font-size: 30px; color: var(--themeht-text-color); left: 0; top: 0; height: 60px; width: 60px; cursor: pointer; display: block; z-index: 1; -webkit-transition: all 200ms linear; transition: all 200ms linear; }
 .scroll-top:hover::after { opacity: 0; }
@@ -137,6 +137,9 @@ img,
 .subscribe-btn { border: none; padding: 10px 25px; background: linear-gradient(270deg, var(--themeht-primary-color3) 65%, var(--themeht-primary-color) 67%, var(--themeht-primary-color2) 68%); background-position: 100% 0%; color: var(--themeht-white-color); font-family: var(--themeht-secondary-font-family); font-weight: 600; border-radius: 10px; position: absolute; right: 5px; top: 5px; background-size: 320% 100%; moz-transition: all .4s ease-in-out; -o-transition: all .4s ease-in-out; -webkit-transition: all .4s ease-in-out; transition: all .4s ease-in-out; }
 .subscribe-btn:hover, .subscribe-btn:focus { color: var(--themeht-white-color); background-position: 0% 0; }
 
+.dropdown-toggle::after {
+    color: white;
+}
 
 
 /* ------------------------
