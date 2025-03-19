@@ -229,11 +229,7 @@ html {
       RIMOZIONE IMMAGINE PER PICCOLI DISPOSITIVI
 ------------------------*/
 
-  @media (max-width: 390px) {
-    .logo-nav {
-      display: none;
-    }
-  }
+  
 
   @media (max-width: 1399px) {
     .banner-img2, .banner-img3 {
