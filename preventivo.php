@@ -87,7 +87,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <link href="css/spacing.css" rel="stylesheet" type="text/css" />
 
 <!--== base -->
-<link href="css/base2.css?v=3" rel="stylesheet" type="text/css" />
+<link href="css/base2.css?v=5" rel="stylesheet" type="text/css" />
 
 
 <!--== shortcodes -->

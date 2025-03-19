@@ -159,7 +159,7 @@ span,
 .navbar-nav .nav-link:hover { color: var(--themeht-primary-color3); }
 .navbar-nav .nav-item .nav-link.active { color: var(--themeht-primary-color2); }
 .nav-item.dropdown .dropdown-menu li:last-child { margin-bottom: 0; }
-.nav-item.dropdown .dropdown-menu a { display: block; padding: 10px 0; line-height: 1; white-space: nowrap; position: relative; background: none; color: var(--themeht-text-color); font-size: 15px; font-weight: 400; }
+.nav-item.dropdown .dropdown-menu a { display: block; padding: 10px 0; /*line-height: 1*/; white-space: nowrap; position: relative; background: none; color: var(--themeht-text-color); font-size: 15px; font-weight: 400; }
 .nav-item.dropdown .dropdown-menu a:hover { color: var(--themeht-primary-color3); padding-left: 10px; }
 .navbar-nav .dropdown-menu .dropdown-submenu .dropdown-toggle.show, .navbar-nav .dropdown-menu .dropdown-submenu .dropdown-toggle:focus { color: var(--themeht-primary-color); padding-left: 10px; }
 .nav-link.dropdown-toggle::after, .navbar-nav .dropdown-submenu .dropdown-toggle::after { border: none; content: '+'; vertical-align: middle; font-size: 22px; line-height: 1; width: 10px; }
