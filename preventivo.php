@@ -100,7 +100,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <link href="css/responsive.css" rel="stylesheet" type="text/css" />
 
 <!--== modifiche -->
-<link href="css/modifiche.css?v=2" data-style="styles" rel="stylesheet">
+<link href="css/modifiche.css?v=3" data-style="styles" rel="stylesheet">
 
 <!--== modifiche presonalizzate-->
 <link href="css/chi-siamo.css" data-style="styles" rel="stylesheet">

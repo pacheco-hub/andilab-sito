@@ -53,7 +53,7 @@
 
 
 <!--== modifiche -->
-<link href="css/modifiche.css?v=2" data-style="styles" rel="stylesheet">
+<link href="css/modifiche.css?v=3" data-style="styles" rel="stylesheet">
 
 <!-- inject css end -->
  <!--capthca 3  -->
@@ -219,8 +219,8 @@
           Nascono dal bisogno di semplificare e velocizzare le vostre procedure aziendali,
           fornendovi uno strumento efficace ed efficiente!</p>
         <div class="wow animate__fadeInUp animate__slow">
-          <a class="themeht-btn" href="servizi.html" target="_blank">Vedi i Servizi</a>
-          <a class="themeht-btn dark-btn ms-3" href="preventivo.php" target="_blank">Richiedi Preventivo</a>
+          <a id="servizi" class="themeht-btn" href="servizi.html" target="_blank">Vedi i Servizi</a>
+          <a id="richiedi-preventivo" class="themeht-btn dark-btn ms-3" href="preventivo.php" target="_blank">Richiedi Preventivo</a>
         </div>
       </div>
     </div>
@@ -1347,7 +1347,25 @@ footer end-->
     });
   });
 
-</script>
+  // Funzione per rimuovere la classe
+    function checkScreenWidth() {
+      const link = document.getElementById('richiedi-preventivo');
+          
+          if (window.innerWidth < 407) {
+              link.classList.remove('ms-3');
+          } else {
+              link.classList.add('ms-3');
+          }
+      }
+
+      // Esegui la funzione al caricamento della pagina
+      window.addEventListener('load', checkScreenWidth);
+
+      // Esegui la funzione ogni volta che la finestra cambia dimensione
+      window.addEventListener('resize', checkScreenWidth);
+
+
+  </script>
 
 </body>
 
