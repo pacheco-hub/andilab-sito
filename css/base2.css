@@ -29,7 +29,8 @@ a, button, input { outline: medium none !important; color: var(--themeht-primary
 
 *::-moz-selection { background: var(--themeht-primary-color); color: var(--themeht-white-color); text-shadow: none; }
 ::-moz-selection { background: var(--themeht-primary-color); color: var(--themeht-white-color); text-shadow: none; }
-::selection { background: var(--themeht-primary-color2); color: var(--themeht-white-color); text-shadow: none; }
+::selection { background: rgba(0, 0, 0, 0.5); /* Colore di sfondo per la selezione */
+    color: white; /* Colore del testo selezionato */ }
 
 
 /* ------------------------

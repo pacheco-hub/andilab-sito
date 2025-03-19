@@ -5,6 +5,10 @@ h1 {
   -webkit-text-fill-color: transparent;
 }
 
+h1::selection {
+  background: rgba(0, 0, 0, 0.5); /* Colore di sfondo per la selezione */
+  color: white; /* Colore del testo selezionato */
+}
 /*--------------------------
         paragrafo
 ---------------------------*/

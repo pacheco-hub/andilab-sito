@@ -234,7 +234,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   </ul>
                 </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link " href="#" data-bs-toggle="dropdown">Contatti</a>
+                  <a class="nav-link " href="contatti.html" target="_blank">Contatti</a>
                 </li> 
               </ul>
             </div>
