@@ -1,49 +1,5 @@
-<?php
-// Connessione al database
-$servername = "localhost"; // Cambia con il tuo server
-$username = "root"; // Cambia con il tuo username
-$password = ""; // Cambia con la tua password
-$dbname = "contatti_clienti"; // Il nome del tuo database
 
-// Crea connessione
-$conn = new mysqli($servername, $username, $password, $dbname);
 
-// Controlla la connessione
-if ($conn->connect_error) {
-  die("Connessione fallita: " . $conn->connect_error);
-}
-
-// Variabili per il messaggio di successo o errore
-$messaggio_successo = "";
-$errore = "";
-
-// Verifica se il modulo è stato inviato
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Ottieni i dati inviati dal modulo
-    $nome = $_POST['name'];
-    $email = $_POST['email'];
-    $oggetto = $_POST['oggetto'];
-    $messaggio = $_POST['message'];
-
-    // Prepara la query di inserimento
-    $sql = "INSERT INTO contatti (nome, email, oggetto, messaggio) 
-            VALUES ('$nome', '$email', '$oggetto', '$messaggio')";
-
-    if ($conn->query($sql) === TRUE) {
-        // Successo nell'inserimento dei dati
-        $messaggio_successo = "Messaggio inviato con successo!";
-    } else {
-        // Errore nell'inserimento dei dati
-        $errore = "Errore: " . $sql . "<br>" . $conn->error;
-    }
-
-    // Chiudi la connessione
-    $conn->close();
-
-    // Dopo l'invio, resettare il form
-    $_POST = array();
-}
-?>
 
 
 <!DOCTYPE html>
@@ -109,6 +65,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <link href="css/servizi.css" data-style="styles" rel="stylesheet">
 <link href="css/istruzione.css?v=5" data-style="styles" rel="stylesheet">
 
+<!-- Toastr CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
 <!-- inject css end -->
  <!--capthca 3  -->
@@ -309,37 +267,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <h2>Raccontaci la tua idea qua sotto!</h2>
         </div>
 
-        <?php if (!empty($messaggio_successo)) { ?>
-            <p class="successo"><?php echo $messaggio_successo; ?></p>
-        <?php } elseif (!empty($errore)) { ?>
-            <p class="errore"><?php echo $errore; ?></p>
-        <?php } ?>
+       
 
         <form id="contatti-form" method="post" action="">
           <div class="messages"></div>
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <input id="form_name" type="text" name="name" class="form-control" placeholder="Nome" value="<?php echo isset($_POST['name']) ? $_POST['name'] : ''; ?>" required>
+                <input id="form_name" type="text" name="name" class="form-control" placeholder="Nome" required>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <input id="form_email" type="email" name="email" class="form-control" placeholder="Email" value="<?php echo isset($_POST['email']) ? $_POST['email'] : ''; ?>" required>
+                <input id="form_email" type="email" name="email" class="form-control" placeholder="Email" required>
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-md-12">
               <div class="form-group">
-                <input id="form_oggetto" type="text" name="oggetto" class="form-control" placeholder="Oggetto" value="<?php echo isset($_POST['oggetto']) ? $_POST['oggetto'] : ''; ?>" required>
+                <input id="form_oggetto" type="text" name="oggetto" class="form-control" placeholder="Oggetto"  required>
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-md-12">
               <div class="form-group">
-                <textarea id="form_message" name="message" class="form-control" placeholder="Messaggio" rows="4" required><?php echo isset($_POST['message']) ? $_POST['message'] : ''; ?></textarea>
+                <textarea id="form_message" name="message" class="form-control" placeholder="Messaggio" rows="4" required></textarea>
               </div>
             </div>
             <div class="col-md-12 mt-2">
@@ -438,7 +392,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <ul class="list-inline ps-0 ms-0 footer-social">
             <li class="list-inline-item">
               <a href="https://andilab.it/progetto-autoscuole-friuli.php" target="_blank">
-                  <img class="piattaforme" src="images/gestioneclienti-logo.png" alt="">
+                  <img class="piattaforme" src="images/gestionLogo.ico" alt="">
                   <div class="text"><p>Gestione Clienti</p></div>
               </a>
             </li>
@@ -589,6 +543,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!--== jquery -->
 <script src="js/jquery.min.js"></script> 
 
+<!-- Toastr JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
 <!--== bootstrap -->
 <script src="js/bootstrap.bundle.min.js"></script>
 
@@ -611,7 +568,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <script src="js/wow.min.js"></script>
 
 <!--== theme-script -->
-<script src="js/andilab.js?v=3"></script>
+<script src="js/andilab.js?v=4"></script>
 
 <!-- inject js end -->
 
@@ -631,6 +588,47 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         .then(data => console.log('Risposta reCAPTCHA:', data));
     });
   });
+
+  $(document).ready(function() {
+    $("#contatti-form").submit(function(event) {
+        event.preventDefault();
+        var formData = $(this).serialize();
+        $.ajax({
+            url: "invia.php", // Punto al file separato
+            type: "POST",
+            data: formData,
+            dataType: "json", // Specifica che la risposta è in formato JSON
+            success: function(response) {
+                if(response.esito === 1) {
+                    toastr.success(response.messaggio, {
+                      positionClass: 'toast-bottom-right', 
+                      progressBar: true, 
+                      timeOut: 3000 
+                    });
+
+                    // Pulisci i campi del form
+                    $("#form_name").val('');
+                    $("#form_email").val('');
+                    $("#form_oggetto").val('');
+                    $("#form_message").val('');
+                } else {
+                    toastr.error('Errore nell\'invio del messaggio: ' + response.errori.join(', '), {
+                      positionClass: 'toast-bottom-right', 
+                      progressBar: true, 
+                      timeOut: 3000
+                    });
+                    // Reset del form
+                    $("#contatti-form")[0].reset();
+                }
+
+                // Sostituisci lo stato della cronologia per eliminare i dati POST
+                window.history.replaceState(null, null, window.location.href);
+            }
+        });
+    });
+});
+
+
 
 </script>
 

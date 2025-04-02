@@ -407,67 +407,35 @@ $('#mc-form').on('submit', function(e) {
     processData: false,
     contentType: false,
     success: function(data) {
-      console.log('Risposta dal server:', data);
+        console.log('Risposta dal server:', data);
 
-      // Rimuove eventuali messaggi precedenti
-      $('.message-overlay').remove();
+        // Rimuovi eventuali messaggi precedenti
+        toastr.remove();
 
-      // Crea un overlay per il messaggio
-      var overlay = $('<div class="message-overlay"></div>').css({
-        'position': 'fixed',
-        'top': '0',
-        'left': '0',
-        'width': '100vw',
-        'height': '100vh',
-        'background': 'rgba(0, 0, 0, 0.5)', // Sfondo semi-trasparente
-        'display': 'flex',
-        'align-items': 'center',
-        'justify-content': 'center',
-        'z-index': '9999'
-      });
+        // Controlla la risposta dal server
+        if (data.status === "success") {
+            // Mostra un messaggio di successo con Toastr
+            toastr.success(data.message, 'Successo', {
+                positionClass: 'toast-bottom-right',
+                progressBar: true,
+                timeOut: 3000
+            });
+            $('#mc-form')[0].reset(); // Resetta tutti i campi del form
+        } else {
+            // Mostra un messaggio di errore con Toastr
+            toastr.error(data.message, 'Errore', {
+                positionClass: 'toast-bottom-right',
+                progressBar: true,
+                timeOut: 3000
+            });
+        }
 
-      // Crea il messaggio
-      var messageBox = $('<div class="message-box"></div>').css({
-        'padding': '20px 30px',
-        'border-radius': '10px',
-        'text-align': 'center',
-        'font-size': '18px',
-        'font-weight': 'bold',
-        'min-width': '300px',
-        'max-width': '80%',
-        'box-shadow': '0px 4px 10px rgba(0,0,0,0.2)',
-        'background-color': '#fff' // Bianco di default per contrasto
-      });
-
-      if (data.status === "success") {
-        messageBox.css({
-          'background-color': '#d4edda',
-          'color': '#155724',
-          'border': '2px solid #c3e6cb'
-        });
-        $('#mc-form')[0].reset(); // Resetta tutti i campi del form
-      } else {
-        messageBox.css({
-          'background-color': '#f8d7da',
-          'color': '#721c24',
-          'border': '2px solid #f5c6cb'
-        });
-      }
-
-      messageBox.text(data.message);
-      overlay.append(messageBox);
-      $('body').append(overlay);
-
-      // Rimuove il messaggio dopo 3 secondi con animazione fade out
-      setTimeout(function() {
-        overlay.fadeOut(500, function() {
-          location.reload(); // Ricarica la pagina
-        });
-      }, 1500);
+        // Non è più necessario gestire l'overlay o ricaricare la pagina
+        // Rimuovi il messaggio dopo 3 secondi (Toastr gestisce automaticamente il tempo di visualizzazione)
     },
     error: function(xhr, status, error) {
-      console.error('Errore:', error);
+        console.error('Errore:', error);
     }
-  });
+});
 });
 
