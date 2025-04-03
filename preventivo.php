@@ -147,13 +147,13 @@
                   <a class="nav-link dropdown-toggle " href="#" data-bs-toggle="dropdown">Azienda</a>
                   <ul class="dropdown-menu">
                     <li>
-                      <a href="about-us.html" target="_blank">Chi Siamo</a>
+                      <a href="about-us.html" >Chi Siamo</a>
                     </li>
                     <li>
-                      <a href="tecnologia.html" target="_blank">Tecnologia</a>
+                      <a href="tecnologia.html" >Tecnologia</a>
                     </li>
                     <li>
-                      <a href="certificazioni.html" target="_blank">Certificazioni</a>
+                      <a href="certificazioni.html" >Certificazioni</a>
                     </li>
                     <!--
                     <li class="dropdown dropdown-submenu">
@@ -167,7 +167,7 @@
                         </li>
                       </ul>-->
                       <li>
-                        <a  class="nav-link" href="politica-aziendale.html" target="_blank">Politica Aziendale</a>
+                        <a  class="nav-link" href="politica-aziendale.html" >Politica Aziendale</a>
                       </li>
                     </li>
                   </ul>
@@ -179,20 +179,20 @@
                       <a  href="servizi.html">Servizi</a>
                     </li>
                     <li>
-                      <a  href="piattaforma-istruzione.html" target="_blank">Piattaforma Istruzione</a>
+                      <a  href="piattaforma-istruzione.html" >Piattaforma Istruzione</a>
                     </li>
                     <li>
-                      <a href="istruzione-salute.html" target="_blank">Istruzione Salute</a>
+                      <a href="istruzione-salute.html" >Istruzione Salute</a>
                     </li>
                     <li>
-                      <a  href="gestione-clienti.html" target="_blank">Gestione Clienti</a>
+                      <a  href="gestione-clienti.html" >Gestione Clienti</a>
                     </li>
                     
                     
                   </ul>
                 </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link " href="contatti.html" target="_blank">Contatti</a>
+                  <a class="nav-link " href="contatti.html" >Contatti</a>
                 </li> 
               </ul>
             </div>
@@ -219,7 +219,7 @@
         <nav aria-label="breadcrumb" class="page-breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item">
-              <a href="index.html" target="_blank">
+              <a href="index.html" >
                 <i class="bi bi-house-door me-1 "></i>Home</a>
             </li>
             
