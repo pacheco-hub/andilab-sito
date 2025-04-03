@@ -27,13 +27,14 @@ $response = array(
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = $_POST['name'];
+    $numero = $_POST['numero'];
     $email = $_POST['email'];
     $oggetto = $_POST['oggetto'];
     $messaggio = $_POST['message'];
 
     // Inserisci nel database
-    $sql = "INSERT INTO contatti (nome, email, oggetto, messaggio) 
-            VALUES ('$nome', '$email', '$oggetto', '$messaggio')";
+    $sql = "INSERT INTO contatti (nome, numero, email, oggetto, messaggio) 
+            VALUES ('$nome', '$numero', '$email', '$oggetto', '$messaggio')";
 
     if (!$conn->query($sql)) {
         $response["errori"][] = "Errore durante l'inserimento nel database.";
@@ -56,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->addAddress('pacheco.andilab@gmail.com');
         $mail->isHTML(true);
         $mail->Subject = "Preventivo da $email";
-        $mail->Body = "Nome: $nome<br>Email: $email<br>Oggetto: $oggetto<br>Messaggio: $messaggio";
+        $mail->Body = "Nome: $nome<br>Numero: $numero<br>Email: $email<br>Oggetto: $oggetto<br>Messaggio: $messaggio";
 
         if ($mail->send()) {
             // Successo

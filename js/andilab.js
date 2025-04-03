@@ -399,6 +399,7 @@ $('#mc-form').on('submit', function(e) {
   e.preventDefault(); // Previene il reload della pagina
 
   var formData = new FormData(this);
+  console.log('Dati del form:', formData);
   
   $.ajax({
     url: 'subscribe.php',

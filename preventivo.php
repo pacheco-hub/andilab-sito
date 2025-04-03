@@ -124,7 +124,7 @@
               <ul class="nav navbar-nav mx-auto">
                 <!-- Home -->
                 <li class="nav-item dropdown">
-                  <a class="nav-link" href="index.html" target="_blank">Home</a>
+                  <a class="nav-link" href="index.html" >Home</a>
                   <!--<ul class="dropdown-menu">
                     <li>
                       <a href="index.html">Home 01</a>
@@ -269,33 +269,45 @@
 
        
 
-        <form id="contatti-form" method="post" action="">
+        <form id="contatti-form" method="post" action="" style="text-align: left;">
           <div class="messages"></div>
           <div class="row">
             <div class="col-md-6">
-              <div class="form-group">
-                <input id="form_name" type="text" name="name" class="form-control" placeholder="Nome" required>
+              <div class="form-group" >
+                
+                <input id="form_name" type="text" name="name" class="form-control required" placeholder="Nome" >
+                <p id="form_nameError" class="text-danger" style="display:none;"></p>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <input id="form_email" type="email" name="email" class="form-control" placeholder="Email" required>
+                <input id="form_numero" type="text" name="numero" class="form-control required" placeholder="Numero di telefono" maxlength="10" >
+                <p id="form_numeroError" class="text-danger" style="display:none;"></p>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group">
+                <input id="form_email" type="email" name="email" class="form-control required" placeholder="Email" >
+                <p id="form_emailError" class="text-danger" style="display:none;"></p>
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-md-12">
               <div class="form-group">
-                <input id="form_oggetto" type="text" name="oggetto" class="form-control" placeholder="Oggetto"  required>
+                <input id="form_oggetto" type="text" name="oggetto" class="form-control required" placeholder="Oggetto"  >
+                <p id="form_oggettoError" class="text-danger" style="display:none;"></p>
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-md-12">
               <div class="form-group">
-                <textarea id="form_message" name="message" class="form-control" placeholder="Messaggio" rows="4" required></textarea>
+                <textarea id="form_message" name="message" class="form-control required" placeholder="Messaggio" rows="4" ></textarea>
+                <p id="form_messageError" class="text-danger" style="display:none;"></p>
               </div>
             </div>
+            <p style= "font-size:15px">Tutte le caselle sono obbligatorie.</p>
             <div class="col-md-12 mt-2">
             
               <button class="themeht-btn dark-btn" style="width: 100%;">Invia!</button>
@@ -489,7 +501,7 @@
               <h5 style="display: inline; margin-right: 10px;">Vuoi saperne di più? Lascia la tua email</h5> 
               <div class="subscribe-form">
                 <form id="mc-form" class="mc-form">
-                  <input type="email" value="" name="EMAIL" class="email" id="mc-email" placeholder="Inserisci Email" required="">
+                  <input type="email" value="" name="EMAIL" class="email" id="mc-email" placeholder="Inserisci Email" >
                    
                   <input class="subscribe-btn" type="submit" name="subscribe" value="Invia">
                 </form>
@@ -590,44 +602,103 @@
   });
 
   $(document).ready(function() {
+    // Per il campo telefono, preveniamo la digitazione di lettere
+    $('#form_numero').on('input', function(event) {
+            // Sostituiamo qualsiasi carattere che non sia un numero
+            var valore = $(this).val();
+            // Manteniamo solo i numeri
+            $(this).val(valore.replace(/[^0-9]/g, ''));
+          });
     $("#contatti-form").submit(function(event) {
-        event.preventDefault();
+      event.preventDefault();
+      var completo = true;
+
+      $('.required').each(function() {
+
+        var text = "compilare questo campo";
+        if($(this).val() == ' ' || $(this).val() == 0) {
+          completo = false;
+          $(this).addClass("border border-2 border-danger");
+          $("#" + this.id + "Error").text(text).show();
+        } else {
+          $(this).removeClass("border border-2 border-danger");
+          $("#" + this.id + "Error").text("").hide();
+        }
+         // Controllo specifico per il telefono (rimane invariato)
+         if (this.id == "form_numero") {
+          var telefono = $(this).val();
+          // Controllo che il telefono contenga solo numeri e sia lungo 10 caratteri
+          var reg = /^[0-9]{10}$/;
+          if (!reg.test(telefono)) {
+            completo = false;
+            $("#" + this.id).addClass("border border-2 border-danger"); // Aggiungi bordo rosso al campo
+            $("#" + this.id + "Error").text("Inserire un numero telefonico valido").show(); // Messaggio di errore specifico
+          } else {
+            $("#" + this.id).removeClass("border border-2 border-danger"); // Rimuovi bordo rosso
+            $("#" + this.id + "Error").text("").hide(); // Nascondi il messaggio di errore
+          }
+        }
+      
+
+       // Controllo specifico per l'email
+       if (this.id == "form_email" ) {
+          var email = $(this).val();
+          // Controllo che l'email sia valida
+          var reg = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+          if (!reg.test(email)) {
+              completo = false;
+              $("#" + this.id).addClass("border border-2 border-danger"); // Aggiungi bordo rosso al campo
+              $("#" + this.id + "Error").text("Inserire un'email valida").show(); // Messaggio di errore specifico
+          } else {
+              $("#" + this.id).removeClass("border border-2 border-danger"); // Rimuovi bordo rosso
+              $("#" + this.id + "Error").text("").hide(); // Nascondi il messaggio di errore
+          }
+        }
+      });
+     
+      
+      if(completo) {
         var formData = $(this).serialize();
         $.ajax({
-            url: "invia.php", // Punto al file separato
-            type: "POST",
-            data: formData,
-            dataType: "json", // Specifica che la risposta è in formato JSON
-            success: function(response) {
-                if(response.esito === 1) {
-                    toastr.success(response.messaggio, {
-                      positionClass: 'toast-bottom-right', 
-                      progressBar: true, 
-                      timeOut: 3000 
-                    });
+          url: "invia.php", // Punto al file separato
+          type: "POST",
+          data: formData,
+          dataType: "json", // Specifica che la risposta è in formato JSON
+          success: function(response) {
+            if(response.esito === 1) {
+                toastr.success(response.messaggio, {
+                  positionClass: 'toast-bottom-right', 
+                  progressBar: true, 
+                  timeOut: 3000 
+                });
 
-                    // Pulisci i campi del form
-                    $("#form_name").val('');
-                    $("#form_email").val('');
-                    $("#form_oggetto").val('');
-                    $("#form_message").val('');
-                } else {
-                    toastr.error('Errore nell\'invio del messaggio: ' + response.errori.join(', '), {
-                      positionClass: 'toast-bottom-right', 
-                      progressBar: true, 
-                      timeOut: 3000
-                    });
-                    // Reset del form
-                    $("#contatti-form")[0].reset();
-                }
-
-                // Sostituisci lo stato della cronologia per eliminare i dati POST
-                window.history.replaceState(null, null, window.location.href);
+                // Pulisci i campi del form
+                $("#form_name").val('');
+                $("#form_email").val('');
+                $("#form_oggetto").val('');
+                $("#form_message").val('');
+                $("#form_numero").val('');
+                $('.required').removeClass("border border-2 border-danger"); // Rimuovi il bordo rosso
+                $('.error').hide(); // Nascondi i messaggi di errore
+            } else {
+              toastr.error('Errore nell\'invio del messaggio: ' + response.errori.join(', '), {
+                positionClass: 'toast-bottom-right', 
+                progressBar: true, 
+                timeOut: 3000
+              });
+              // Reset del form
+              $("#contatti-form")[0].reset();
             }
-        });
-    });
-});
 
+            // Sostituisci lo stato della cronologia per eliminare i dati POST
+            window.history.replaceState(null, null, window.location.href);
+          }
+        });
+      }    
+    });
+       
+  });
+  
 
 
 </script>
