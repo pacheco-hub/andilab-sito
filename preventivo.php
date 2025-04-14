@@ -50,10 +50,10 @@
 <link href="css/shortcodes.css" rel="stylesheet" type="text/css" />
 
 <!--== default-theme -->
-<link href="css/style2.css" rel="stylesheet" type="text/css" />
+<link href="css/style2.css?v=2" rel="stylesheet" type="text/css" />
 
 <!--== responsive -->
-<link href="css/responsive.css" rel="stylesheet" type="text/css" />
+<link href="css/responsive.css?v=2" rel="stylesheet" type="text/css" />
 
 <!--== modifiche -->
 <link href="css/modifiche.css?v=3" data-style="styles" rel="stylesheet">
@@ -167,7 +167,7 @@
                         </li>
                       </ul>-->
                       <li>
-                        <a  class="nav-link" href="politica-aziendale.html" >Politica Aziendale</a>
+                        <a   href="politica-aziendale.html" >Politica Aziendale</a>
                       </li>
                     </li>
                   </ul>
@@ -475,10 +475,10 @@
                   <a href="tecnologia.html" >Tecnologia</a>
                 </li>
                 <li>
-                  <a href="contatti.php" >Contattaci</a>
+                  <a href="contatti.html" >Contattaci</a>
                 </li>
                 <!--<li>
-                  <a href="contatti.php" >Contattaci</a>
+                  <a href="contatti.html" >Contattaci</a>
                 </li>-->
               </ul>
             </div>

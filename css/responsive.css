@@ -90,7 +90,7 @@
     .banner { padding: 150px 0 50px; }
     .round-shape-animation { width: 500px; height: 500px; right: -270px; }
     .round-shape-animation::before { height: 200px; width: 200px; }
-    .marquee-text span {height: 70px; font-size: 50px; line-height: 1; font-weight: 600; font-family: var(--themeht-secondary-font-family); background: linear-gradient(180deg, var(--themeht-primary-color2) 46%, var(--themeht-primary-color) 48%, var(--themeht-primary-color3) 49%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    /*.marquee-text span {height: 70px; font-size: 50px; line-height: 1; font-weight: 600; font-family: var(--themeht-secondary-font-family); background: linear-gradient(180deg, var(--themeht-primary-color2) 46%, var(--themeht-primary-color) 48%, var(--themeht-primary-color3) 49%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }*/
     .marquee-text i { font-size: 30px; margin: 0 10px; }
 
     /*Countdown*/
