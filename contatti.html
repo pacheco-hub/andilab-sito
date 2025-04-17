@@ -46,7 +46,7 @@
 <link href="css/shortcodess2.css?v=2" rel="stylesheet" type="text/css" />
 
 <!--== default-theme -->
-<link href="css/style2.css?v=2" rel="stylesheet" type="text/css" />
+<link href="css/style2.css?v=3" rel="stylesheet" type="text/css" />
 
 <!--== responsive -->
 <link href="css/responsive.css?v=2" rel="stylesheet" type="text/css" />
@@ -67,6 +67,9 @@
 <!--capthca 3  -->
 
 <script src="https://www.google.com/recaptcha/api.js?render=6Lf0HfMqAAAAANou-wuqhN_X4NJpQfH7BtaoWnIf"></script>
+
+<!-- AOS CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
 
 <!-- inject css end -->
@@ -221,7 +224,7 @@
 <section class="page-title">
   <div class="container">
     <div class="row justify-content-center text-center">
-      <div class="col-lg-8 col-md-12">
+      <div class="col-lg-8 col-md-12  wow animate__fadeInDown">
         <h1>
            Contatti
         </h1>
@@ -260,7 +263,7 @@
 
 <!--contact start-->
 
-<section class="contact-info pb-0" style="margin-bottom: 100px;">
+<section class="contact-info pb-0 wow animate__flipInX" style="margin-bottom: 100px;">
   <div class="container">
     <div class="theme-title">
         <h3>contattaci</h3>
@@ -283,7 +286,7 @@
   </div>
 </section>
 
-<a id="preventivo" class="themeht-btn dark-btn" href="preventivo.php" target="_blank">Richiedi Preventivo</a>
+<a id="preventivo" class="themeht-btn dark-btn" href="preventivo.php" target="_blank" data-aos="fade-right">Richiedi Preventivo</a>
 
 
 
@@ -444,7 +447,7 @@
           <div class="row text-center">
             <div class="col"> © Andilab S.r.l. | Registro Imprese di Pescara Chieti - REA 417993 | P.IVA / Cod. Fisc.: 02326560683 <br>
                
-                <a href="privacy-andilab.html" target="_blank">Privacy & Cookies</a>
+                <a href="privacy-andilab.html">Privacy & Cookies</a>
                   
                
               
@@ -506,7 +509,14 @@
 <!--== theme-script -->
 <script src="js/andilab.js?v=4"></script>
 
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
 <!-- inject js end -->
+
+<script>
+  AOS.init();
+</script>
 
 </body>
 

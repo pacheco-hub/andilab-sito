@@ -50,7 +50,7 @@
 <link href="css/shortcodes.css" rel="stylesheet" type="text/css" />
 
 <!--== default-theme -->
-<link href="css/style2.css?v=2" rel="stylesheet" type="text/css" />
+<link href="css/style2.css?v=3" rel="stylesheet" type="text/css" />
 
 <!--== responsive -->
 <link href="css/responsive.css?v=2" rel="stylesheet" type="text/css" />
@@ -196,7 +196,7 @@
                 </li> 
               </ul>
             </div>
-            <a class="themeht-btn dark-btn" href="preventivo.php" target="_blank">Richiedi Preventivo</a>
+            <a class="themeht-btn dark-btn" href="preventivo.php" >Richiedi Preventivo</a>
           </nav>
         </div>
       </div>
@@ -212,7 +212,7 @@
 <section class="page-title">
   <div class="container">
     <div class="row justify-content-center text-center">
-      <div class="col-lg-8 col-md-12">
+      <div class="col-lg-8 col-md-12 wow animate__fadeInDown">
         <h1>
             Preventivo
         </h1>
@@ -254,14 +254,15 @@
 <!--contact start-->
 
 <section>
-  <div class="container">
-    <div class="row align-items-center">
+  <div class="container wow animate__flipInX">
+    <div class="row d-flex align-items-center justify-content-center" >
+      <!--
       <div class="col-lg-6 col-md-12 pe-lg-10">
         <div class="map iframe-h-2">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2944.7058433334905!2d13.979212091000473!3d42.433995796891864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1331b721d5c770dd%3A0x99dc39c7a3757ac!2sVia%20dei%20Normanni%2C%2017%2C%2065014%20Loreto%20Aprutino%20PE!5e0!3m2!1sit!2sit!4v1742293498172!5m2!1sit!2sit" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
-      </div>
-      <div class="col-lg-6 col-md-12 mt-7 mt-lg-0">
+      </div>-->
+      <div class="col-lg-10 col-md-12 mt-7 mt-lg-0" style="background-color: white; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); padding: 20px; border-radius: 10px;">
         <div class="theme-title">
           <h6>Offerta personalizzata</h6>
           <h2>Raccontaci la tua idea qua sotto!</h2>
@@ -459,7 +460,7 @@
             <div class="col-lg-4 col-md-4 mt-5 mt-md-0 footer-menu">
               <ul class="list-unstyled w-100">
                 <li>
-                  <a href="preventivo.php" target="_blank">Richiedi un preventivo</a>
+                  <a href="preventivo.php" >Richiedi un preventivo</a>
                 </li>
                 <li>
                   <a href="index.html" >Andilab</a>
@@ -520,7 +521,7 @@
         <div class="row text-center">
           <div class="col"> © Andilab S.r.l. | Registro Imprese di Pescara Chieti - REA 417993 | P.IVA / Cod. Fisc.: 02326560683 <br>
              
-              <a href="privacy-andilab.html" target="_blank">Privacy & Cookies</a>
+              <a href="privacy-andilab.html">Privacy & Cookies</a>
                 
              
             
