@@ -1347,18 +1347,7 @@ footer end-->
 
 <script>
 
-  grecaptcha.ready(function() {
-    grecaptcha.execute('6Lf0HfMqAAAAANou-wuqhN_X4NJpQfH7BtaoWnIf', {action: 'homepage'}).then(function(token) {
-        // Invia il token al server per la verifica
-        fetch('verifica.php', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: 'recaptcha_response=' + token
-        })
-        .then(response => response.text())
-        .then(data => console.log('Risposta reCAPTCHA:', data));
-    });
-  });
+ 
 
   // Funzione per rimuovere la classe
     function checkScreenWidth() {

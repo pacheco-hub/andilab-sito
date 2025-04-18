@@ -7,9 +7,9 @@ require 'PHPMailer-master/src/PHPMailer.php';
 require 'PHPMailer-master/src/SMTP.php';
 
 // Connessione al database
-$servername = "localhost";
-$username = "root";
-$password = "";
+$servername = "localhost3306";
+$username = "sql_000005_2";
+$password = "A43w5aa~";
 $dbname = "contatti_clienti";
 
 $conn = new mysqli($servername, $username, $password, $dbname);

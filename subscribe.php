@@ -31,12 +31,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Configurazione del database (per XAMPP)
     $servername = "localhost";
-    $username = "root";      // Default di XAMPP
-    $password = "";          // Default di XAMPP
-    $dbname = "email";       // Nome del tuo database
+    $port = 3306;               // Porta di default per MySQL
+    $username = "sql_000005_2";      // Default di XAMPP
+    $password = "A43w5aa~";          // Default di XAMPP
+    $dbname = "sql_000005_2";       // Nome del tuo database
 
     // Crea la connessione
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    $conn = new mysqli($servername, $username, $password, $dbname, $port);
     if ($conn->connect_error) {
         echo json_encode([
             "status" => "error",
