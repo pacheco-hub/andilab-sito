@@ -398,45 +398,47 @@ document.addEventListener("DOMContentLoaded", function() {
 $('#mc-form').on('submit', function(e) {
   e.preventDefault(); // Previene il reload della pagina
 
-  var formData = new FormData(this);
-  console.log('Dati del form:', formData);
-  
-  $.ajax({
-    url: 'subscribe.php',
-    type: 'POST',
-    data: formData,
-    processData: false,
-    contentType: false,
-    success: function(data) {
-        console.log('Risposta dal server:', data);
+  grecaptcha.ready(function() {
+      grecaptcha.execute('6Ld7cyArAAAAAD6fgzfmwSRbEEO9Dhsl_LJd73l2', {action: 'submit'}).then(function(token) {
+          // Inserisce il token nel campo hidden
+          $('#recaptchaResponse').val(token);
 
-        // Rimuovi eventuali messaggi precedenti
-        toastr.remove();
+          // Ora prepara i dati del form
+          var formData = new FormData($('#mc-form')[0]);
+         
 
-        // Controlla la risposta dal server
-        if (data.status === "success") {
-            // Mostra un messaggio di successo con Toastr
-            toastr.success(data.message, 'Successo', {
-                positionClass: 'toast-bottom-right',
-                progressBar: true,
-                timeOut: 3000
-            });
-            $('#mc-form')[0].reset(); // Resetta tutti i campi del form
-        } else {
-            // Mostra un messaggio di errore con Toastr
-            toastr.error(data.message, 'Errore', {
-                positionClass: 'toast-bottom-right',
-                progressBar: true,
-                timeOut: 3000
-            });
-        }
+          $.ajax({
+              url: 'subscribe.php',
+              type: 'POST',
+              data: formData,
+              processData: false,
+              contentType: false,
+              success: function(data) {
+                  console.log('Risposta dal server:', data);
 
-        // Non è più necessario gestire l'overlay o ricaricare la pagina
-        // Rimuovi il messaggio dopo 3 secondi (Toastr gestisce automaticamente il tempo di visualizzazione)
-    },
-    error: function(xhr, status, error) {
-        console.error('Errore:', error);
-    }
-});
+                  toastr.remove();
+
+                  if (data.status === "success") {
+                      toastr.success(data.message, 'Successo', {
+                          positionClass: 'toast-bottom-right',
+                          progressBar: true,
+                          timeOut: 3000
+                      });
+                      $('#mc-form')[0].reset();
+                  } else {
+                      toastr.error(data.message, 'Errore', {
+                          positionClass: 'toast-bottom-right',
+                          progressBar: true,
+                          timeOut: 3000
+                      });
+                  }
+              },
+              error: function(xhr, status, error) {
+                  console.error('Errore:', error);
+                  toastr.error('Errore di connessione con il server.');
+              }
+          });
+      });
+  });
 });
 

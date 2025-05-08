@@ -15,8 +15,6 @@
 <!-- favicon icon -->
 <link rel="shortcut icon" href="images/pittogramma_classico.png" />
 
-<!-- inject css start -->
-
 <!--== bootstrap -->
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 
@@ -43,7 +41,7 @@
 
 
 <!--== shortcodes -->
-<link href="css/shortcodes.css" rel="stylesheet" type="text/css" />
+<link href="css/shortcodess2.css" rel="stylesheet" type="text/css" />
 
 <!--== default-theme -->
 <link href="css/style2.css?v=3" rel="stylesheet" type="text/css" />
@@ -52,24 +50,35 @@
 <link href="css/responsive.css?v=2" rel="stylesheet" type="text/css" />
 
 <!--== modifiche -->
-<link href="css/modifiche.css?v=3" data-style="styles" rel="stylesheet">
+<link href="css/modifiche.css?v=4" data-style="styles" rel="stylesheet">
 
 <!--== modifiche presonalizzate-->
-<link href="css/chi-siamo.css" data-style="styles" rel="stylesheet">
+<link href="css/tecnologie.css" data-style="styles" rel="stylesheet">
 
 <!-- Toastr CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-
-<!-- AOS CSS -->
-<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-
 
 <!-- inject css end -->
 
 <!--capthca 3  -->
 
-<script src="https://www.google.com/recaptcha/api.js?render=6Lf0HfMqAAAAANou-wuqhN_X4NJpQfH7BtaoWnIf"></script>
+<script src="https://www.google.com/recaptcha/api.js?render=6Ld7cyArAAAAAD6fgzfmwSRbEEO9Dhsl_LJd73l2"></script>
+<!-- AOS CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<style>
+  @media (max-width: 576px) {
+    #programmi {
+      display: none;
+    }
+  }
+
+  @media (min-width: 576px) {
+    #programmiMobile {
+      display: none;
+    }
+  }
+</style>
 
 </head>
 
@@ -142,25 +151,16 @@
                   <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">Azienda</a>
                   <ul class="dropdown-menu">
                     <li>
-                      <a class="nav-link active" href="about-us.html" >Chi Siamo</a>
+                      <a  href="about-us.html" >Chi Siamo</a>
                     </li>
                     <li>
-                      <a href="tecnologia.html" >Tecnologia</a>
+                      <a class="nav-link active" href="tecnologia.html" >Tecnologia</a>
                     </li>
                     <li>
                       <a href="certificazioni.html" >Certificazioni</a>
                     </li>
-                    <!--
                     <li class="dropdown dropdown-submenu">
-                      <a class="dropdown-toggle" href="#">Portfolio</a>
-                      <ul class="dropdown-menu">
-                        <li>
-                          <a href="portfolio-one.html">Portfolio One</a>
-                        </li>
-                        <li>
-                          <a href="portfolio-single.html">Portfolio Single</a>
-                        </li>
-                      </ul>-->
+                      
                       <li>
                         <a href="politica-aziendale.html"> Politica Aziendale</a>
                       </li>
@@ -182,16 +182,17 @@
                     <li>
                       <a href="gestione-clienti.html" >Gestione Clienti</a>
                     </li>
-                    
+                   
                     
                   </ul>
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link " href="contatti.html" >Contatti</a>
+
                 </li> 
               </ul>
             </div>
-            <a class="themeht-btn dark-btn" href="preventivo.php" target="_blank">Richiedi Preventivo</a>
+            <a class="themeht-btn dark-btn" href="preventivo.php" >Richiedi Preventivo</a>
           </nav>
         </div>
       </div>
@@ -206,10 +207,10 @@
 
 <section class="page-title">
   <div class="container">
-    <div class="row justify-content-center text-center">
-      <div class="col-lg-8 col-md-12 wow animate__fadeInDown">
-        <h1>
-          La nostra azienda
+    <div class="row justify-content-center text-center wow animate__fadeInDown">
+      <div class="col-lg-8 col-md-12">
+        <h1 style=" line-height: 1.2;">
+          Tecnologia
         </h1>
         <nav aria-label="breadcrumb" class="page-breadcrumb">
           <ol class="breadcrumb">
@@ -218,7 +219,7 @@
                 <i class="bi bi-house-door me-1"></i>Home</a>
             </li>
             
-            <li class="breadcrumb-item active" aria-current="page">Chi Siamo</li>
+            <li class="breadcrumb-item active" aria-current="page">Tecnologia</li>
           </ol>
         </nav>
       </div>
@@ -244,45 +245,295 @@
 
 <div class="page-content">
 
-<!--about start-->
+<!--service start-->
 
-<section>
-  <div class="container wow animate__fadeInLeft animate__slow">
-    <div class="row align-items-center">
-      <div class="col-lg-6 col-md-12">
-        <img class="img-fluid" src="images/chisiamo.png" alt="">
-      </div>
-      <div class="col-lg-6 col-md-12 mt-6 mt-lg-0 ps-lg-10">
-        <div class="theme-title mb-4">
-          <h6 class="wow animate__fadeInRight animate__delay-1s">CHI SIAMO</h6>
-          <h2>Il nostro impegno</h2>
-        </div>
-        <div class="info-item">
-          <i class="bi bi-info-circle"></i>
-          <p>Andilab è un'azienda specializzata nello sviluppo di software proprietario, impegnata a offrire soluzioni innovative per ottimizzare l'esperienza dei nostri clienti e rispondere alle loro esigenze.</p> 
-        </div>
-        <div class="info-item">
-            <i class="bi bi-info-circle"></i>
-            <p>Fondata nel 2019, Andilab si dedica allo sviluppo di software con tecnologia PHP e Bootstrap, con l'obiettivo di diventare leader del settore e offrire servizi di alta qualità ai nostri clienti.</p>
-        </div>
-        <div class="info-item">
-          <i class="bi bi-info-circle"></i>
-          <p>La nostra missione è quella di soddisfare le esigenze che verranno, quelle che oggi si gelano nella burocrazia, fornendo soluzioni personalizzate e di alta qualità ai nostri clienti. </p>
-        </div>
-        <div class="info-item">
-          <i class="bi bi-info-circle"></i>
-          <p>L'obiettivo è creare relazioni di lunga durata con i clienti, mantenendo elevati standard etici e professionali.</p>
+<section id="programmi" class="pb-0 wow animate__fadeInLeft">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="grediant-tecnologie p-10 rounded">
+          <div class="row">
+            <div class="col-lg-8">
+              <div class="theme-title">
+                <h6 style="display: inline; margin-right: 10px;">la nostra tecnologia</h6>
+                <h2>Le basi del nostro sviluppo software</h2>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="service-item style-2">
+                <div class="service-top">
+                  <div class="service-images">
+                    <img class="img-fluid" src="images/php-icon.png" alt="">
+                  </div>
+                  <div class="service-title">
+                    <h4>PHP</h4>
+                  </div>
+                </div>
+                <div class="service-desc">
+                  <p>Acronimo di Personal Home Page, è un linguaggio di programmazione tanto rivoluzionario quanto semplice e gode di grande popolarità, secondo gli ultimi dati riportati da w3techs, PHP è infatti utilizzato dal 78% dei siti, tra cui i noti Facebook, WordPress e Wikipedia. E' sicuro, affidabile, veloce e altamente prestante. </p>
+                  <!--<a class="service-btn" href="https://www.php.net/" target="_blank">
+                    <i class="bi bi-arrow-right-short"></i>--> <br>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mt-4 mt-md-0">
+              <div class="service-item style-2">
+                <div class="service-top">
+                  <div class="service-images">
+                    <img class="img-fluid" src="images/javascript-icon.png" alt="">
+                  </div>
+                  <div class="service-title">
+                    <h4>Javascript</h4>
+                  </div>
+                </div>
+                <div class="service-desc">
+                  <p>Javascript è un linguaggio di programmazione orientato agli oggetti e agli eventi, comunemente utilizzato nella programmazione Web lato client (esteso poi anche al lato server) per la creazione, in siti web e applicazioni web, di effetti dinamici interattivi tramite funzioni di script invocate da eventi innescati a loro volta in vari modi dall'utente sulla pagina web in uso (mouse, tastiera, caricamento della pagina ecc...). </p>
+                  <!--<a class="service-btn" href="services-single.html">
+                    <i class="bi bi-arrow-right-short"></i>-->
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mt-4">
+              <div class="service-item style-2">
+                <div class="service-top">
+                  <div class="service-images">
+                    <img class="img-fluid" src="images/mysql-icon.png" alt="">
+                  </div>
+                  <div class="service-title">
+                    <h4>MySQL</h4>
+                  </div>
+                </div>
+                <div class="service-desc">
+                  <p>MySQL è un relational database management system (RDBMS) composto da un client a riga di comando e un server, entrambi disponibili sia per sistemi Unix e Unix-like sia per Windows; le piattaforme principali di riferimento sono Linux. </p>
+                  <!--<a class="service-btn" href="services-single.html">
+                    <i class="bi bi-arrow-right-short"></i>--> <br> <br>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mt-4">
+              <div class="service-item style-2">
+                <div class="service-top">
+                  <div class="service-images">
+                    <img class="img-fluid" src="images/bootstrap-icon.png" alt="">
+                  </div>
+                  <div class="service-title">
+                    <h4>Bootstrap</h4>
+                  </div>
+                </div>
+                <div class="service-desc">
+                  <p>Gli applicativi utilizzati sono bootstrap, il quale è una raccolta di strumenti liberi per la creazione di siti e applicazioni per il Web. Esso contiene modelli di progettazione basati su HTML e CSS, sia per la tipografia, che per le varie componenti dell'interfaccia, come moduli, pulsanti e navigazione, così come alcune estensioni opzionali di JavaScript. </p>
+                 <!-- <a class="service-btn" href="services-single.html">
+                    <i class="bi bi-arrow-right-short"></i>-->
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!--about end-->
-<a id="preventivo" class="themeht-btn dark-btn" href="preventivo.php" target="_blank" data-aos="fade-right">Richiedi Preventivo</a>
+<section class=""  data-aos= "flip-right"  data-aos-duration="1000" data-aos-delay="50" id="programmiMobile">
+  <div class="container ">
+    <div class="row justify-content-center text-center">
+      
+        <div class="theme-title">
+          <h6>LA NOSTRA TECNOLOGIA</h6>
+          
+        </div>
+      
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="owl-carousel" data-dots="false" data-nav="true" data-center="true" data-items="3" data-lg-items="2" data-md-items="2" data-sm-items="1" data-autoplay="true">
+          <div class="item ">
+            <div class="testimonial style-2 theme-title rounded text-center">
+              <h3>PHP</h3>
+                <div class="mb-5" >
+                  <img class="img-fluid" src="images/php-icon.png" alt="Testimonial Image" style="max-width: 150px; margin: 0 auto;">
+                </div>
+                <p>PHP è un linguaggio di scripting lato server, ampiamente utilizzato per sviluppare siti web dinamici. È veloce, flessibile e supportato dalla maggior parte dei server e sistemi.</p>
+              
+              
+              
+            </div>
+          </div>
+          <div class="item">
+            <div class="testimonial style-2 theme-title text-center">
+              <h3>JAVASCRIPT</h3>
+                <div class="mb-5" >
+                  <img class="img-fluid" src="images/javascript-icon.png" alt="Testimonial Image" style="max-width: 150px; margin: 0 auto;">
+                </div>
+                <p>JavaScript è un linguaggio di programmazione lato client usato per rendere le pagine web interattive. Supporta eventi, animazioni e aggiornamenti dinamici senza ricaricare la pagina.
+                </p>
+              
+              
+              
+            </div>
+          </div>
+          <div class="item">
+            <div class="testimonial style-2 theme-title text-center">
+              <h3>MYSQL</h3>
+                <div class="mb-5" >
+                  <img class="img-fluid" src="images/mysql-icon.png" alt="Testimonial Image" style="max-width: 150px; margin: 0 auto;">
+                </div>
+                <p>MySQL è un sistema di gestione di database relazionali veloce e affidabile. Viene usato per archiviare e gestire dati in applicazioni web e software.</p>
+              
+              
+              
+            </div>
+          </div>
+          <div class="item">
+            <div class="testimonial style-2 theme-title text-center">
+              <h3>BOOTSTRAPT</h3>
+                <div class="mb-5" >
+                  <img class="img-fluid" src="images/bootstrap-icon.png" alt="Testimonial Image" style="max-width: 150px; margin: 0 auto;">
+                </div>
+                <p>Bootstrap è un framework front-end che semplifica la creazione di siti web responsive. Fornisce componenti predefiniti e uno stile coerente basato su HTML, CSS e JavaScript.
+                </p>
+              
+              
+              
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--service end-->
 
 
-<!--marquee start-->
+<!--price table start-->
+
+
+
+<!--price table end-->
+
+</div>
+
+<div id="tecnologie" class="container">
+  <h2  data-aos="fade-right" class="text-center mb-5">Prestazioni, sicurezza, efficienza.</h2>
+  <div class="row mb-6 mb-lg-0 order-lg-1 mt-3">
+    
+    <!-- Primo riquadro -->
+    <div class="col-12 col-md-6 col-lg-3 mb-4"  data-aos="fade-up-right" data-aos-duration="1500">
+      <div class="featured-item style-2">
+        <div class="featured-icon">
+          <i class="bi bi-hdd-network"></i>
+        </div>
+        <div class="featured-desc">
+          <div class="featured-title">
+            <h5>Server e tecnologia utilizzata</h5>
+          </div>
+          <div class="info-item">
+            <i class="bi bi-info-circle"></i>
+            <p>Il sistema operativo del server è AlmaLinux 8.8 (Sapphire Caracal), è una distribuzione linux per server 64bit.</p>
+          </div>
+          <div class="info-item">
+            <i class="bi bi-info-circle"></i>
+            <p>Il database è MySql.</p>
+          </div>
+          <div class="info-item">
+            <i class="bi bi-info-circle"></i>
+            <p>Il server è una macchina di proprietà Andilab presente nella farm di ARUBA SPA.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Secondo riquadro -->
+    <div class="col-12 col-md-6 col-lg-3 mb-4" data-aos="fade-down" data-aos-duration="1500">
+      <div class="featured-item style-2">
+        <div class="featured-icon">
+          <i class="bi bi-shield-check"></i>
+        </div>
+        <div class="featured-desc">
+          <div class="featured-title">
+            <h5>Sicurezza</h5>
+          </div>
+          <div class="info-item">
+            <i class="bi bi-info-circle"></i>
+            <p>L’accesso ai servizi avviene tramite spid per garantire il più alto livello di sicurezza.</p>
+          </div>
+          <div class="info-item">
+            <i class="bi bi-info-circle"></i>
+            <p>La navigazione è in protocollo https e permette la criptografia dei dati.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Terzo riquadro -->
+    <div class="col-12 col-md-6 col-lg-3 mb-4" data-aos="fade-down" data-aos-duration="1500">
+      <div class="featured-item style-2">
+        <div class="featured-icon">
+          <i class="bi bi-bug"></i>
+        </div>
+        <div class="featured-desc">
+          <div class="featured-title">
+            <h5>Antivirus</h5>
+          </div>
+          <div class="info-item">
+            <i class="bi bi-info-circle"></i>
+            <p>Il sistema dispone di un antivirus Linux denominato Antivirus Plesk Premium, il quale verifica i file caricati, le possibili minacce, ed è sempre aggiornato.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Quarto riquadro -->
+    <div class="col-12 col-md-6 col-lg-3 mb-4" data-aos="fade-up-left" data-aos-duration="1500">
+      <div class="featured-item style-2">
+        <div class="featured-icon">
+          <i class="bi bi-database"></i>
+        </div>
+        <div class="featured-desc">
+          <div class="featured-title">
+            <h5>Spazio di archiviazione</h5>
+          </div>
+          <div class="info-item">
+            <i class="bi bi-info-circle"></i>
+            <p>Lo spazio dedicato per l’intera soluzione comprende file della soluzione Andilab fornita all’istituto.</p>
+          </div>
+          <div class="info-item">
+            <i class="bi bi-info-circle"></i>
+            <p>L'istituto può aumentare lo spazio di archiviazione.</p>
+          </div>
+          <div class="info-item">
+            <i class="bi bi-info-circle"></i>
+            <p>I testi, le immagini e i documenti caricati saranno presenti nel server e richiamabili in ogni momento.</p>
+          </div>
+          <div class="info-item">
+            <i class="bi bi-info-circle"></i>
+            <p>L’archivio è accessibile da parte dell’utente ogni qual volta lo desidera.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-6 mb-4">
+      <div class="image-container text-center">
+        <img src="images/riempire.png" class="img-fluid" alt="Descrizione immagine" data-aos="fade-up" data-aos-delay="100">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--body content end--> 
+
+<div data-aos="fade-right">
+  <a id="preventivo" class="themeht-btn dark-btn" href="preventivo.php"  >Richiedi Preventivo</a>
+</div>
+
 
 <section class="overflow-hidden p-0"  style="margin-bottom: 20px;">
   <div class="container-fluid p-0">
@@ -306,31 +557,6 @@
     </div>
   </div>
 </section>
-
-<!--marquee end-->
-
-
-<!--feature start-->
-
-
-<!--feature end-->
-
-
-<!--pricing start-->
-
-
-<!--pricing end-->
-
-
-<!--timeline start-->
-
-
-<!--timeline end-->
-
-</div>
-
-<!--body content end--> 
-
 
 <!--footer start-->
 
@@ -365,20 +591,20 @@
           <h5>PROGETTI</h5>
           <ul class="list-inline ps-0 ms-0 footer-social">
             <li class="list-inline-item">
-              <a href="gestione-clienti.html" target="_blank">
+              <a href="gestione-clienti.html" >
                   <img class="piattaforme" src="images/gestionLogo.ico" alt="">
                   <div class="text"> <p>Gestione Clienti</p></div>
               </a>
           </li>
           
             <li class="list-inline-item">
-              <a href="istruzione-salute.html" target="_blank">
+              <a href="istruzione-salute.html" >
                 <img class="piattaforme" src="images/piattaforma_is.png" alt="">
                 <div class="textto"><p>Istruzione Salute</p></div>
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="piattaforma-istruzione.html" target="_blank">
+              <a href="piattaforma-istruzione.html" >
                 <img class="piattaforme" src="images/piattaforma_pi.png" alt="">
                 <div class="textto"><p>Piattaforma Istruzione</p></div>
               </a>
@@ -421,7 +647,7 @@
             <div class="col-lg-4 col-md-4 mt-5 mt-md-0 footer-menu">
               <ul class="list-unstyled w-100">
                 <li>
-                  <a href="preventivo.php" target="_blank">Richiedi un preventivo</a>
+                  <a href="preventivo.php" >Richiedi un preventivo</a>
                 </li>
                 <li>
                   <a href="index.html" >Andilab</a>
@@ -463,8 +689,8 @@
               <h5 style="display: inline; margin-right: 10px;">Vuoi saperne di più? Lascia la tua email</h5> 
               <div class="subscribe-form">
                 <form id="mc-form" class="mc-form">
-                  <input type="email" value="" name="EMAIL" class="email" id="mc-email" placeholder="Inserisci Email" >
-                   
+                 <input type="email" value="" name="EMAIL" class="email" id="mc-email" placeholder="Inserisci Email">
+                  <input type="hidden" id="recaptchaResponse" name="recaptcha-response">
                   <input class="subscribe-btn" type="submit" name="subscribe" value="Invia">
                 </form>
 
@@ -492,7 +718,6 @@
     </div>
   </div>
 </footer>
-
 <!--footer end-->
 
 
@@ -500,6 +725,10 @@
 
 <!-- page wrapper end -->
 
+
+<a href="preventivo.php" class="preventivo-float-btn"  title="Richiedi Preventivo" >
+  <i class="bi-pencil-square"></i>
+</a>
 
 <!--back-to-top start-->
 
@@ -515,7 +744,7 @@
 <!-- inject js start -->
 
 <!--== jquery -->
-<script src="js/jquery.min.js"></script> 
+<script src="js/jquery.min.js"></script>
 
 <!-- Toastr JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>

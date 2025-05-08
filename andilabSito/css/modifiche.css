@@ -270,4 +270,38 @@ html {
   outline: none !important;
 }
 
+/* ------------------------
+      BOTTONE RICHIEDI PREVENTIVO RESPONSIVE
+------------------------*/
+.preventivo-float-btn {
+  position: fixed;
+  bottom: 80px;
+  left: 50px; /* posizione a sinistra */
+  width: 60px;
+  height: 60px;
+  background-color: #ef781a; /* colore personalizzabile */
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  z-index: 999;
+  transition: background-color 0.3s, transform 0.3s;
+  text-decoration: none;
+  font-size: 24px;
+}
 
+ 
+
+  .preventivo-float-btn:hover {
+    background-color: #2b86c7;
+    transform: scale(1.1);
+  }
+
+/* Mostralo solo su schermi piccoli */
+@media (min-width: 992px) {
+  .preventivo-float-btn {
+    display: none;
+  }
+}

@@ -52,7 +52,7 @@
 <link href="css/responsive.css?v=2" rel="stylesheet" type="text/css" />
 
 <!--== modifiche -->
-<link href="css/modifiche.css?v=3" data-style="styles" rel="stylesheet">
+<link href="css/modifiche.css?v=4" data-style="styles" rel="stylesheet">
 
 <!--== modifiche presonalizzate-->
 <link href="css/chi-siamo.css" data-style="styles" rel="stylesheet">
@@ -71,7 +71,7 @@
 <!-- inject css end -->
  <!--capthca 3  -->
 
-<script src="https://www.google.com/recaptcha/api.js?render=6Lf0HfMqAAAAANou-wuqhN_X4NJpQfH7BtaoWnIf"></script>
+<script src="https://www.google.com/recaptcha/api.js?render=6Ld7cyArAAAAAD6fgzfmwSRbEEO9Dhsl_LJd73l2"></script>
 
 </head>
 
@@ -193,7 +193,7 @@
                 </li> 
               </ul>
             </div>
-            <a class="themeht-btn dark-btn" href="preventivo.php" target="_blank">Richiedi Preventivo</a>
+            <a class="themeht-btn dark-btn" href="preventivo.php" >Richiedi Preventivo</a>
           </nav>
         </div>
       </div>
@@ -333,7 +333,9 @@
 </div>
 
 <!--body content end--> 
-<a id="preventivo" class="themeht-btn dark-btn" href="preventivo.php" target="_blank" data-aos="fade-right">Richiedi Preventivo</a>
+<div data-aos="fade-right">
+  <a id="preventivo" class="themeht-btn dark-btn" href="preventivo.php"  >Richiedi Preventivo</a>
+</div>
 <!--marquee start-->
 
 <section class="overflow-hidden p-0"  style="margin-bottom: 20px;">
@@ -395,20 +397,20 @@
           <h5>PROGETTI</h5>
           <ul class="list-inline ps-0 ms-0 footer-social">
             <li class="list-inline-item">
-              <a href="gestione-clienti.html" target="_blank">
+              <a href="gestione-clienti.html" >
                   <img class="piattaforme" src="images/gestionLogo.ico" alt="">
                   <div class="text"><p>Gestione Clienti</p></div>
               </a>
             </li>
           
             <li class="list-inline-item">
-              <a href="istruzione-salute.html" target="_blank">
+              <a href="istruzione-salute.html" >
                 <img class="piattaforme" src="images/piattaforma_is.png" alt="">
                 <div class="textto"><p>Istruzione Salute</p></div>
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="piattaforma-istruzione.html" target="_blank">
+              <a href="piattaforma-istruzione.html" >
                 <img class="piattaforme" src="images/piattaforma_pi.png" alt="">
                 <div class="textto"><p>Piattaforma Istruzione</p></div>
               </a>
@@ -451,7 +453,7 @@
             <div class="col-lg-4 col-md-4 mt-5 mt-md-0 footer-menu">
               <ul class="list-unstyled w-100">
                 <li>
-                  <a href="preventivo.php" target="_blank">Richiedi un preventivo</a>
+                  <a href="preventivo.php" >Richiedi un preventivo</a>
                 </li>
                 <li>
                   <a href="index.html" >Andilab</a>
@@ -493,8 +495,8 @@
               <h5 style="display: inline; margin-right: 10px;">Vuoi saperne di più? Lascia la tua email</h5> 
               <div class="subscribe-form">
                 <form id="mc-form" class="mc-form">
-                  <input type="email" value="" name="EMAIL" class="email" id="mc-email" placeholder="Inserisci Email" >
-                   
+                 <input type="email" value="" name="EMAIL" class="email" id="mc-email" placeholder="Inserisci Email">
+                  <input type="hidden" id="recaptchaResponse" name="recaptcha-response">
                   <input class="subscribe-btn" type="submit" name="subscribe" value="Invia">
                 </form>
 
@@ -530,6 +532,10 @@
 
 <!-- page wrapper end -->
 
+
+<a href="preventivo.php" class="preventivo-float-btn"  title="Richiedi Preventivo" >
+  <i class="bi-pencil-square"></i>
+</a>
 
 <!--back-to-top start-->
 

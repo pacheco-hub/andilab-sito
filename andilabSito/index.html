@@ -64,7 +64,45 @@
 <!-- inject css end -->
  <!--capthca 3  -->
 
-<script src="https://www.google.com/recaptcha/api.js?render=6Lf0HfMqAAAAANou-wuqhN_X4NJpQfH7BtaoWnIf"></script>
+<script src="https://www.google.com/recaptcha/api.js?render=6Ld7cyArAAAAAD6fgzfmwSRbEEO9Dhsl_LJd73l2"></script>
+
+
+<style>
+  .preventivo-float-btn {
+  position: fixed;
+  bottom: 80px;
+  left: 50px; /* posizione a sinistra */
+  width: 60px;
+  height: 60px;
+  background-color: #ef781a; /* colore personalizzabile */
+  color: white;
+  border-radius: 50%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  z-index: 999;
+  transition: background-color 0.3s, transform 0.3s;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+  .preventivo-float-btn.show {
+    display: flex;
+  }
+
+  .preventivo-float-btn:hover {
+    background-color: #2b86c7;
+    transform: scale(1.1);
+  }
+
+/* Mostralo solo su schermi piccoli */
+@media (min-width: 992px) {
+  .preventivo-float-btn {
+    display: none !important;
+  }
+}
+</style>
 
 </head>
 
@@ -187,7 +225,7 @@
                 </li> 
               </ul>
             </div>
-            <a class="themeht-btn dark-btn" href="preventivo.php" target="_blank">Richiedi Preventivo</a>
+            <a class="themeht-btn dark-btn" href="preventivo.php" >Richiedi Preventivo</a>
           </nav>
         </div>
       </div>
@@ -200,7 +238,7 @@
 
 <!--hero section start-->
 
-<section class="banner-2 grediant-bg2">
+<section id="start" class="banner-2 grediant-bg2">
   <div class="container" >
     <div class="row" >
       <div class="col-lg-6 col-md-12 order-lg-1">
@@ -227,7 +265,7 @@
           fornendovi uno strumento efficace ed efficiente!</p>
         <div class="wow animate__fadeInUp animate__slow">
           <a id="servizi" class="themeht-btn" href="servizi.html" >Vedi i Servizi</a>
-          <a id="richiedi-preventivo" class="themeht-btn dark-btn ms-3" href="preventivo.php" target="_blank">Richiedi Preventivo</a>
+          <a id="richiedi-preventivo" class="themeht-btn dark-btn ms-3" href="preventivo.php" >Richiedi Preventivo</a>
         </div>
       </div>
     </div>
@@ -1161,20 +1199,20 @@ footer end-->
           <h5>PROGETTI</h5>
           <ul class="list-inline ps-0 ms-0 footer-social">
             <li class="list-inline-item">
-              <a href="gestione-clienti.html" target="_blank">
+              <a href="gestione-clienti.html" >
                   <img class="piattaforme" src="images/gestionLogo.ico" alt="">
                   <div class="text"> <p>Gestione Clienti</p></div>
               </a>
           </li>
           
             <li class="list-inline-item">
-              <a href="istruzione-salute.html" target="_blank">
+              <a href="istruzione-salute.html" >
                 <img class="piattaforme" src="images/piattaforma_is.png" alt="">
                 <div class="textto"><p>Istruzione Salute</p></div>
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="piattaforma-istruzione.html" target="_blank">
+              <a href="piattaforma-istruzione.html" >
                 <img class="piattaforme" src="images/piattaforma_pi.png" alt="">
                 <div class="textto"><p>Piattaforma Istruzione</p></div>
               </a>
@@ -1217,7 +1255,7 @@ footer end-->
             <div class="col-lg-4 col-md-4 mt-5 mt-md-0 footer-menu">
               <ul class="list-unstyled w-100">
                 <li>
-                  <a href="preventivo.php" target="_blank">Richiedi un preventivo</a>
+                  <a href="preventivo.php" >Richiedi un preventivo</a>
                 </li>
                 <li>
                   <a href="index.html" >Andilab</a>
@@ -1259,8 +1297,8 @@ footer end-->
               <h5 style="display: inline; margin-right: 10px;">Vuoi saperne di più? Lascia la tua email</h5> 
               <div class="subscribe-form">
                 <form id="mc-form" class="mc-form">
-                  <input type="email" value="" name="EMAIL" class="email" id="mc-email" placeholder="Inserisci Email" >
-                   
+                 <input type="email" value="" name="EMAIL" class="email" id="mc-email" placeholder="Inserisci Email">
+                  <input type="hidden" id="recaptchaResponse" name="recaptcha-response">
                   <input class="subscribe-btn" type="submit" name="subscribe" value="Invia">
                 </form>
 
@@ -1292,8 +1330,10 @@ footer end-->
 
 </div>
 
-<!-- page wrapper end -->
 
+<a href="preventivo.php" class="preventivo-float-btn"  title="Richiedi Preventivo" >
+  <i class="bi-pencil-square"></i>
+</a>
 
 <!--back-to-top start-->
 
@@ -1345,9 +1385,34 @@ footer end-->
 <!-- AOS JS -->
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
+<script id="usercentrics-cmp" src="https://web.cmp.usercentrics.eu/ui/loader.js" data-settings-id="TeewT5yBit08E9" async></script>
+
 <script>
 
- 
+  document.addEventListener("DOMContentLoaded", function () {
+    const observerTarget = document.getElementById('start');
+    const btn = document.querySelector('.preventivo-float-btn');
+
+    const observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            btn.classList.remove('show'); // Se 'start' è visibile, nascondi il bottone
+          } else {
+            btn.classList.add('show'); // Se 'start' NON è visibile, mostra il bottone
+          }
+        });
+      },
+      {
+        root: null,
+        threshold: 0
+      }
+    );
+
+    if (observerTarget) {
+      observer.observe(observerTarget);
+    }
+  });
 
   // Funzione per rimuovere la classe
     function checkScreenWidth() {

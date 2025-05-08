@@ -26,18 +26,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
+    
+    $recaptchaSecret = '6Ld7cyArAAAAAFerqWTUWTxtE53yzD-Gsx1mHddD';
+    $recaptchaResponse = $_POST['recaptcha-response'];
+
+    $verify = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret={$recaptchaSecret}&response={$recaptchaResponse}");
+    $responseKeys = json_decode($verify, true);
+
+    if (!$responseKeys["success"] || $responseKeys["score"] < 0.5) {
+        echo json_encode([
+            "status" => "error",
+            "message" => "Verifica reCAPTCHA fallita"
+        ]);
+        exit;
+    }
     $email = $_POST['EMAIL'];
     $data_iscrizioni = date("Y-m-d H:i:s");
 
-    // Configurazione del database (per XAMPP)
-    $servername = "localhost";
-    $port = 3306;               // Porta di default per MySQL
-    $username = "sql_000005_2";      // Default di XAMPP
-    $password = "A43w5aa~";          // Default di XAMPP
-    $dbname = "sql_000005_2";       // Nome del tuo database
-
+  
+    
     // Crea la connessione
-    $conn = new mysqli($servername, $username, $password, $dbname, $port);
+    $conn = new mysqli('localhost:3306', 'sql_000005', 'xK8Do0hezHpsr74@r', 'sql_000005_2');
+    
     if ($conn->connect_error) {
         echo json_encode([
             "status" => "error",

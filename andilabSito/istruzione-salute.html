@@ -39,7 +39,7 @@
 <link href="css/spacing.css" rel="stylesheet" type="text/css" />
 
 <!--== base -->
-<link href="css/base2.css?v=6" rel="stylesheet" type="text/css" />
+<link href="css/base2.css?v=5" rel="stylesheet" type="text/css" />
 
 
 <!--== shortcodes -->
@@ -52,24 +52,24 @@
 <link href="css/responsive.css?v=2" rel="stylesheet" type="text/css" />
 
 <!--== modifiche -->
-<link href="css/modifiche.css?v=3" data-style="styles" rel="stylesheet">
+<link href="css/modifiche.css?v=4" data-style="styles" rel="stylesheet">
 
 <!--== modifiche presonalizzate-->
-<link href="css/certificazioni.css" data-style="styles" rel="stylesheet">
+<link href="css/chi-siamo.css" data-style="styles" rel="stylesheet">
+
+<!--== modifiche presonalizzate-->
+<link href="css/servizi.css" data-style="styles" rel="stylesheet">
+<link href="css/istruzione.css?v=12" data-style="styles" rel="stylesheet">
 
 <!-- Toastr CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-
-<!-- AOS CSS -->
-<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
 
 
 <!-- inject css end -->
 
 <!--capthca 3  -->
 
-<script src="https://www.google.com/recaptcha/api.js?render=6Lf0HfMqAAAAANou-wuqhN_X4NJpQfH7BtaoWnIf"></script>
+<script src="https://www.google.com/recaptcha/api.js?render=6Ld7cyArAAAAAD6fgzfmwSRbEEO9Dhsl_LJd73l2"></script>
 
 </head>
 
@@ -139,16 +139,16 @@
                   </ul>-->
                 </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">Azienda</a>
+                  <a class="nav-link dropdown-toggle " href="#" data-bs-toggle="dropdown">Azienda</a>
                   <ul class="dropdown-menu">
                     <li>
-                      <a  href="about-us.html" >Chi Siamo</a>
+                      <a href="about-us.html" >Chi Siamo</a>
                     </li>
                     <li>
                       <a href="tecnologia.html" >Tecnologia</a>
                     </li>
                     <li>
-                      <a class="nav-link active" href="certificazioni.html">Certificazioni</a>
+                      <a href="certificazioni.html" >Certificazioni</a>
                     </li>
                     <!--
                     <li class="dropdown dropdown-submenu">
@@ -162,22 +162,22 @@
                         </li>
                       </ul>-->
                       <li>
-                        <a href="politica-aziendale.html"> Politica Aziendale</a>
+                        <a   href="politica-aziendale.html" >Politica Aziendale</a>
                       </li>
                     </li>
                   </ul>
                 </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Progetti</a>
+                  <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">Progetti</a>
                   <ul class="dropdown-menu">
                     <li>
-                      <a href="servizi.html" >Servizi</a>
+                      <a  href="servizi.html">Servizi</a>
                     </li>
                     <li>
-                      <a href="piattaforma-istruzione.html" >Piattaforma Istruzione</a>
+                      <a  href="piattaforma-istruzione.html" >Piattaforma Istruzione</a>
                     </li>
                     <li>
-                      <a href="istruzione-salute.html" >Istruzione Salute</a>
+                      <a class="nav-link active" href="istruzione-salute.html" >Istruzione Salute</a>
                     </li>
                     <li>
                       <a href="gestione-clienti.html" >Gestione Clienti</a>
@@ -191,7 +191,7 @@
                 </li> 
               </ul>
             </div>
-            <a class="themeht-btn dark-btn" href="preventivo.php" target="_blank">Richiedi Preventivo</a>
+            <a class="themeht-btn dark-btn" href="preventivo.php" >Richiedi Preventivo</a>
           </nav>
         </div>
       </div>
@@ -206,19 +206,19 @@
 
 <section class="page-title">
   <div class="container">
-    <div class="row justify-content-center text-center wow animate__fadeInDown">
+    <div class="row justify-content-center text-center  wow animate__fadeInDown">
       <div class="col-lg-8 col-md-12">
         <h1>
-          Certificazioni
+           Istruzione Salute
         </h1>
         <nav aria-label="breadcrumb" class="page-breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item">
               <a href="index.html" >
-                <i class="bi bi-house-door me-1"></i>Home</a>
+                <i class="bi bi-house-door me-1 "></i>Home</a>
             </li>
             
-            <li class="breadcrumb-item active" aria-current="page">Certificazioni</li>
+            <li class="breadcrumb-item active" aria-current="page">Istruzione Salute</li>
           </ol>
         </nav>
       </div>
@@ -244,74 +244,59 @@
 
 <div class="page-content">
 
-<!--about start-->
+<!--service start-->
 
-<section class="light-bg" id="certificazioni">
-    <div class="container">
-        <div class="row">
-            <div class="theme-title z-index-1 wow animate__bounceInDown">
-                <h6>Attestati</h6>
-                <h2>Le nostre certificazioni</h2>
-            </div>
-            </div>
-            <div class="row justify-content-center">
-                <!-- Primo riquadro -->
-                <div class="col-md-5 text-center p-4 bg-white shadow rounded wow animate__bounceInLeft">
-                    <h3>ISO 27001</h3>
-                    <img src="images/certificazione_iso.png" alt="ISO 27001" id="iso" class="cert-img">
-                    <p>La certificazione ISO 27001 garantisce la sicurezza delle informazioni attraverso standard internazionali, proteggendo i dati sensibili, riducendo i rischi e assicurando la conformità alle normative sulla privacy e cybersecurity.</p>
-                    <!-- Pulsante "+" -->
-                    <div class="view-cert" data-bs-toggle="modal" data-bs-target="#modalISO27001">
-                        +
-                    </div>
-                </div>
-
-                <!-- Secondo riquadro -->
-                <div class="col-md-5 text-center p-4 bg-white shadow rounded ms-md-4 mt-4 mt-md-0 wow animate__bounceInRight">
-                    <h3>ISO 9001</h3>
-                    <img src="images/certificazione_iso2.png" alt="ISO 9001" id="iso" class="cert-img">
-                    <p>La certificazione ISO 9001 attesta la qualità dei processi aziendali, garantendo efficienza, soddisfazione del cliente e miglioramento continuo nella gestione e nella produzione di beni o servizi.</p>
-                    <!-- Pulsante "+" -->
-                    <div class="view-cert2" data-bs-toggle="modal" data-bs-target="#modalISO9001">
-                        +
-                    </div>
-                </div>
-            </div>
-        </div>
+<section >
+  <div class="servizio wow animate__backInLeft">
+    <!-- Contenuto del box -->
+    <div class="contenitore">
+      <img src="images/piattaforma_is.png" alt="Immagine">
     </div>
+    <h3 style="display: inline;">Istruzione Salute</h3>
+    <p class="descrizioneServizi">La piattaforma Istruzione Salute è stata sviluppata per rispondere ai requisiti della legge 22 dicembre 2021, n. 227, che richiede la compilazione e la trasmissione digitale del certificato diagnostico. Questa soluzione agevola la comunicazione tra i medici e le istituzioni scolastiche, consentendo la creazione e la trasmissione sicura delle certificazioni richieste dalla normativa, nel pieno rispetto della privacy.  </p>
+  
+    <!-- SVG per il bordo animato -->
+    <svg class="border-svg" preserveAspectRatio="none"
+         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 300">
+      <path class="border-path" d="
+        M 750,1
+        H 1489
+        A 10,10 0 0 1 1499,11
+        V 289
+        A 10,10 0 0 1 1489,299
+        H 11
+        A 10,10 0 0 1 1,289
+        V 11
+        A 10,10 0 0 1 11,1
+        Z"
+        fill="none" stroke="#ef781a" stroke-width="10"
+        vector-effect="non-scaling-stroke"
+        stroke-dasharray="3600" stroke-dashoffset="3600" />
+    </svg>
+    <a id="bottoneSito" class="themeht-btn" href="https://istruzionesalute.it/sw/piattaforma/" target="_blank">Vai al sito</a>
+  </div>
 </section>
 
-<!-- Modali per le immagini -->
-<div class="modal fade" id="modalISO27001" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-xl modal-dialog-centered custom-modal">  
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" style="text-align: center;">Certificazione ISO 27001</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body text-center">
-                <img src="images/certificazione1.jpg" alt="ISO 27001" class="img-fluid modal-img">
-            </div>
-        </div>
-    </div>
-</div>
 
-<!-- Modale per ISO 9001 -->
-<div class="modal fade" id="modalISO9001" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-xl modal-dialog-centered custom-modal">  
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Certificazione ISO 9001</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body text-center">
-                <img src="images/certificazione2.jpg" alt="ISO 9001" class="img-fluid modal-img">
-            </div>
-        </div>
-    </div>
-</div>
 
-<a id="preventivo" class="themeht-btn dark-btn" href="preventivo.php" target="_blank"  data-aos="fade-right">Richiedi Preventivo</a>
+
+<!--service end-->
+
+
+<!--counter start-->
+
+
+
+<!--counter end-->
+
+
+<!--price table start-->
+
+
+
+<!--price table end-->
+
+</div>
 
 
 <!--marquee start-->
@@ -340,28 +325,6 @@
 </section>
 
 <!--marquee end-->
-
-
-<!--feature start-->
-
-
-<!--feature end-->
-
-
-<!--pricing start-->
-
-
-<!--pricing end-->
-
-
-<!--timeline start-->
-
-
-<!--timeline end-->
-
-</div>
-
-<!--body content end--> 
 
 
 <!--footer start-->
@@ -397,20 +360,20 @@
           <h5>PROGETTI</h5>
           <ul class="list-inline ps-0 ms-0 footer-social">
             <li class="list-inline-item">
-              <a href="gestione-clienti.html" target="_blank">
+              <a href="gestione-clienti.html" >
                   <img class="piattaforme" src="images/gestionLogo.ico" alt="">
-                  <div class="text"> <p>Gestione Clienti</p></div>
+                  <div class="text"><p>Gestione Clienti</p></div>
               </a>
-          </li>
+            </li>
           
             <li class="list-inline-item">
-              <a href="istruzione-salute.html" target="_blank">
+              <a href="istruzione-salute.html" >
                 <img class="piattaforme" src="images/piattaforma_is.png" alt="">
                 <div class="textto"><p>Istruzione Salute</p></div>
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="piattaforma-istruzione.html" target="_blank">
+              <a href="piattaforma-istruzione.html" >
                 <img class="piattaforme" src="images/piattaforma_pi.png" alt="">
                 <div class="textto"><p>Piattaforma Istruzione</p></div>
               </a>
@@ -453,7 +416,7 @@
             <div class="col-lg-4 col-md-4 mt-5 mt-md-0 footer-menu">
               <ul class="list-unstyled w-100">
                 <li>
-                  <a href="preventivo.php" target="_blank">Richiedi un preventivo</a>
+                  <a href="preventivo.php" >Richiedi un preventivo</a>
                 </li>
                 <li>
                   <a href="index.html" >Andilab</a>
@@ -495,8 +458,8 @@
               <h5 style="display: inline; margin-right: 10px;">Vuoi saperne di più? Lascia la tua email</h5> 
               <div class="subscribe-form">
                 <form id="mc-form" class="mc-form">
-                  <input type="email" value="" name="EMAIL" class="email" id="mc-email" placeholder="Inserisci Email" >
-                   
+                 <input type="email" value="" name="EMAIL" class="email" id="mc-email" placeholder="Inserisci Email">
+                  <input type="hidden" id="recaptchaResponse" name="recaptcha-response">
                   <input class="subscribe-btn" type="submit" name="subscribe" value="Invia">
                 </form>
 
@@ -533,6 +496,10 @@
 <!-- page wrapper end -->
 
 
+<a href="preventivo.php" class="preventivo-float-btn"  title="Richiedi Preventivo" >
+  <i class="bi-pencil-square"></i>
+</a>
+
 <!--back-to-top start-->
 
 <div class="scroll-top">
@@ -549,11 +516,11 @@
 <!--== jquery -->
 <script src="js/jquery.min.js"></script> 
 
-<!--== bootstrap -->
-<script src="js/bootstrap.bundle.min.js"></script>
-
 <!-- Toastr JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+<!--== bootstrap -->
+<script src="js/bootstrap.bundle.min.js"></script>
 
 <!--== jquery-appear -->
 <script src="js/jquery-appear.js"></script> 
@@ -576,13 +543,28 @@
 <!--== theme-script -->
 <script src="js/andilab.js?v=4"></script>
 
-<!-- AOS JS -->
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <!-- inject js end -->
 
+<!-- captcha end -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+  <script>
+
+    grecaptcha.ready(function() {
+      grecaptcha.execute('6Lf0HfMqAAAAANou-wuqhN_X4NJpQfH7BtaoWnIf', {action: 'homepage'}).then(function(token) {
+          // Invia il token al server per la verifica
+          fetch('verifica.php', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+              body: 'recaptcha_response=' + token
+          })
+          .then(response => response.text())
+          .then(data => console.log('Risposta reCAPTCHA:', data));
+      });
+    });
+
+  </script>
+
 </body>
-<script>
-  AOS.init();
-</script>
 
 </html>

@@ -56,7 +56,7 @@
 <link href="css/responsive.css?v=2" rel="stylesheet" type="text/css" />
 
 <!--== modifiche -->
-<link href="css/modifiche.css?v=3" data-style="styles" rel="stylesheet">
+<link href="css/modifiche.css?v=4" data-style="styles" rel="stylesheet">
 
 <!--== modifiche presonalizzate-->
 <link href="css/chi-siamo.css" data-style="styles" rel="stylesheet">
@@ -71,7 +71,7 @@
 <!-- inject css end -->
  <!--capthca 3  -->
 
-<script src="https://www.google.com/recaptcha/api.js?render=6Lf0HfMqAAAAANou-wuqhN_X4NJpQfH7BtaoWnIf"></script>
+<script src="https://www.google.com/recaptcha/api.js?render=6Ld7cyArAAAAAD6fgzfmwSRbEEO9Dhsl_LJd73l2"></script>
 <style>
         .successo { color: green; font-weight: bold; }
         .errore { color: red; font-weight: bold; }
@@ -253,7 +253,7 @@
 
 <!--contact start-->
 
-<section>
+<section style="margin-right: 20px; margin-left: 20px;">
   <div class="container wow animate__flipInX">
     <div class="row d-flex align-items-center justify-content-center" >
       <!--
@@ -301,6 +301,7 @@
               </div>
             </div>
           </div>
+          
           <div class="row">
             <div class="col-md-12">
               <div class="form-group">
@@ -310,7 +311,7 @@
             </div>
             <p style= "font-size:15px">Tutte le caselle sono obbligatorie.</p>
             <div class="col-md-12 mt-2">
-            
+            <input type="hidden" id="recaptchaResponsePreventivo" name="recaptcha_response">
               <button class="themeht-btn dark-btn" style="width: 100%;">Invia!</button>
             </div>
           </div>
@@ -404,20 +405,20 @@
           <h5>PROGETTI</h5>
           <ul class="list-inline ps-0 ms-0 footer-social">
             <li class="list-inline-item">
-              <a href="gestione-clienti.html" target="_blank">
+              <a href="gestione-clienti.html" >
                   <img class="piattaforme" src="images/gestionLogo.ico" alt="">
                   <div class="text"><p>Gestione Clienti</p></div>
               </a>
             </li>
           
             <li class="list-inline-item">
-              <a href="istruzione-salute.html" target="_blank">
+              <a href="istruzione-salute.html" >
                 <img class="piattaforme" src="images/piattaforma_is.png" alt="">
                 <div class="textto"><p>Istruzione Salute</p></div>
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="piattaforma-istruzione.html" target="_blank">
+              <a href="piattaforma-istruzione.html" >
                 <img class="piattaforme" src="images/piattaforma_pi.png" alt="">
                 <div class="textto"><p>Piattaforma Istruzione</p></div>
               </a>
@@ -502,12 +503,11 @@
               <h5 style="display: inline; margin-right: 10px;">Vuoi saperne di più? Lascia la tua email</h5> 
               <div class="subscribe-form">
                 <form id="mc-form" class="mc-form">
-                  <input type="email" value="" name="EMAIL" class="email" id="mc-email" placeholder="Inserisci Email" >
-                   
+                  <input type="email" value="" name="EMAIL" class="email" id="mc-email" placeholder="Inserisci Email">
+                  <input type="hidden" id="recaptchaResponse" name="recaptcha-response">
                   <input class="subscribe-btn" type="submit" name="subscribe" value="Invia">
                 </form>
-
-                <!--<small class="d-block mt-3">Get started for 1 Month free trial No Purchace required.</small>-->
+       <!--<small class="d-block mt-3">Get started for 1 Month free trial No Purchace required.</small>-->
               </div>
             </div>
           </div>
@@ -538,6 +538,7 @@
 </div>
 
 <!-- page wrapper end -->
+
 
 
 <!--back-to-top start-->
@@ -585,22 +586,11 @@
 
 <!-- inject js end -->
 
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 
 <script>
 
-  grecaptcha.ready(function() {
-    grecaptcha.execute('6Lf0HfMqAAAAANou-wuqhN_X4NJpQfH7BtaoWnIf', {action: 'homepage'}).then(function(token) {
-        // Invia il token al server per la verifica
-        fetch('verifica.php', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: 'recaptcha_response=' + token
-        })
-        .then(response => response.text())
-        .then(data => console.log('Risposta reCAPTCHA:', data));
-    });
-  });
+
 
   $(document).ready(function() {
     // Per il campo telefono, preveniamo la digitazione di lettere
@@ -658,45 +648,50 @@
       });
      
       
-      if(completo) {
-        var formData = $(this).serialize();
-        $.ajax({
-          url: "invia.php", // Punto al file separato
-          type: "POST",
-          data: formData,
-          dataType: "json", // Specifica che la risposta è in formato JSON
-          success: function(response) {
-            if(response.esito === 1) {
-                toastr.success(response.messaggio, {
-                  positionClass: 'toast-bottom-right', 
-                  progressBar: true, 
-                  timeOut: 3000 
-                });
+      if (completo) {
+        grecaptcha.ready(function() {
+          grecaptcha.execute('6Ld7cyArAAAAAD6fgzfmwSRbEEO9Dhsl_LJd73l2', {action: 'contatti'}).then(function(token) {
+            // Aggiunge il token al campo hidden
+            $('#recaptchaResponsePreventivo').val(token);
 
-                // Pulisci i campi del form
-                $("#form_name").val('');
-                $("#form_email").val('');
-                $("#form_oggetto").val('');
-                $("#form_message").val('');
-                $("#form_numero").val('');
-                $('.required').removeClass("border border-2 border-danger"); // Rimuovi il bordo rosso
-                $('.error').hide(); // Nascondi i messaggi di errore
-            } else {
-              toastr.error('Errore nell\'invio del messaggio: ' + response.errori.join(', '), {
-                positionClass: 'toast-bottom-right', 
-                progressBar: true, 
-                timeOut: 3000
-              });
-              // Reset del form
-              $("#contatti-form")[0].reset();
-            }
+            // Ora serializza i dati e invia
+            var formData = $("#contatti-form").serialize();
 
-            // Sostituisci lo stato della cronologia per eliminare i dati POST
-            window.history.replaceState(null, null, window.location.href);
-          }
+            $.ajax({
+              url: "invia.php",
+              type: "POST",
+              data: formData,
+              dataType: "json",
+              success: function(response) {
+                if(response.esito === 1) {
+                    toastr.success(response.messaggio, {
+                      positionClass: 'toast-bottom-right', 
+                      progressBar: true, 
+                      timeOut: 3000 
+                    });
+
+                    $("#contatti-form")[0].reset();
+                    $('.required').removeClass("border border-2 border-danger");
+                    $('.error').hide();
+                } else {
+                  let errorMsg = response.errori ? response.errori.join(', ') : 'Si è verificato un errore generico';
+                  toastr.error('Errore nell\'invio del messaggio: ' + errorMsg, {
+                    positionClass: 'toast-bottom-right', 
+                    progressBar: true, 
+                    timeOut: 3000
+                  });
+                  $("#contatti-form")[0].reset();
+                }
+
+                window.history.replaceState(null, null, window.location.href);
+              }
+            });
+          });
         });
       }    
     });
+
+    
        
   });
   

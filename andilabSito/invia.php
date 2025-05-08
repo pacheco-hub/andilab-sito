@@ -7,10 +7,10 @@ require 'PHPMailer-master/src/PHPMailer.php';
 require 'PHPMailer-master/src/SMTP.php';
 
 // Connessione al database
-$servername = "localhost3306";
-$username = "sql_000005_2";
-$password = "A43w5aa~";
-$dbname = "contatti_clienti";
+$servername = "localhost";
+$username = "sql_000005";
+$password = "xK8Do0hezHpsr74@r";
+$dbname = "sql_000005_2";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
@@ -26,6 +26,22 @@ $response = array(
 );
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $recaptchaSecret = '6Ld7cyArAAAAAFerqWTUWTxtE53yzD-Gsx1mHddD';
+    $recaptchaResponse = $_POST['recaptcha_response'];
+
+    $verify = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret={$recaptchaSecret}&response={$recaptchaResponse}");
+    $responseKeys = json_decode($verify, true);
+
+    if (!$responseKeys["success"] || $responseKeys["score"] < 0.5) {
+        echo json_encode([
+            "status" => "error",
+            "message" => "Verifica reCAPTCHA fallita"
+        ]);
+        exit;
+    }
+
+
     $nome = $_POST['name'];
     $numero = $_POST['numero'];
     $email = $_POST['email'];
