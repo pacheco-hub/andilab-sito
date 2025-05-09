@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   
     
     // Crea la connessione
-    $conn = new mysqli('localhost:3306', 'sql_000005', 'xK8Do0hezHpsr74@r', 'sql_000005_2');
+    $conn = new mysqli('localhost:3306', 'sql_andilab_it', '3mxrqkYp3mK0t^Nu7', 'sql_000005_2');
     
     if ($conn->connect_error) {
         echo json_encode([

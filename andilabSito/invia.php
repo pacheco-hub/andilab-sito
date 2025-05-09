@@ -8,8 +8,8 @@ require 'PHPMailer-master/src/SMTP.php';
 
 // Connessione al database
 $servername = "localhost";
-$username = "sql_000005";
-$password = "xK8Do0hezHpsr74@r";
+$username = "sql_andilab_it";
+$password = "3mxrqkYp3mK0t^Nu7";
 $dbname = "sql_000005_2";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -64,12 +64,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'pacheco.andilab@gmail.com';
-        $mail->Password = 'sxak txkm zcbb ihey'; // Usa una password per app se necessario
+        $mail->Username = 'preventivi.andilab@gmail.com';
+        $mail->Password = 'llhi vivc hndx azel'; // Usa una password per app se necessario
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
 
-        $mail->setFrom('pacheco.andilab@gmail.com', 'Kevin');
+        $mail->setFrom('preventivi.andilab@gmail.com', 'Andilab');
         $mail->addAddress('pacheco.andilab@gmail.com');
         $mail->isHTML(true);
         $mail->Subject = "Preventivo da $email";
